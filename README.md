@@ -3,7 +3,7 @@
 
 --------------
 
-* It should go without saying but if you play wordle and want to be smart not like me, you wont use this.
+* It should go without saying but if you play wordle, don't use this, if you do, that's on you, you've been warned 🤪
 * This repo uses playwright to find the solution to wordle. There is no need to go searching through 
  a word list as we can find the solution extremely simply, as can be seen in `wordle.spec.ts`
  
