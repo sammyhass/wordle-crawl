@@ -6,10 +6,15 @@ on:
     branches: [main, master]
   schedule:
     - cron: '15 13 * * *'
+
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      REPO_NAME: ${{ secrets.REPO_NAME }}
+      REPO_OWNER: ${{ secrets.REPO_OWNER }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
