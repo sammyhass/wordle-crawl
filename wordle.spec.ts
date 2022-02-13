@@ -1,0 +1,24 @@
+import { test } from '@playwright/test';
+import { WORDLE_URL } from './constants';
+
+test('get wordle result', async ({ page }) => {
+  await page.goto(WORDLE_URL);
+
+  await page.waitForLoadState('load');
+  // Accept Cookies
+  await page.click('#pz-gdpr-btn-accept');
+
+  let sol;
+
+  const result = await page.evaluate(() => {
+    // @ts-ignore
+    const wordle = window.wordle;
+
+    const game = new wordle.bundle.GameApp();
+    const solution = game.solution;
+    return solution as string;
+  });
+
+  await page.waitForTimeout(4000);
+  console.log(result);
+});
