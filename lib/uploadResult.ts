@@ -1,6 +1,7 @@
 import { Octokit } from '@octokit/rest';
+import { GITHUB_TOKEN, REPO_NAME, REPO_OWNER } from '../constants';
 
-const octo = new Octokit({ auth: process.env.GITHUB_TOKEN });
+const octo = new Octokit({ auth: GITHUB_TOKEN });
 
 export const uploadResult = async (solution: string) => {
   const date = new Date();
@@ -8,8 +9,8 @@ export const uploadResult = async (solution: string) => {
   const wordleString = `🟩🟩🟩🟩🟩`;
 
   const { data, status } = await octo.issues.create({
-    owner: process.env.REPO_OWNER || '',
-    repo: process.env.REPO_NAME || '',
+    owner: REPO_OWNER || '',
+    repo: REPO_NAME || '',
     title: `${date.toDateString()}`,
     body: `## Worldle Solution for ${date.toDateString()}\n${wordleString}\n## Solution: **${solution}**`,
     labels: ['solution', 'wordle', date.toDateString()],
