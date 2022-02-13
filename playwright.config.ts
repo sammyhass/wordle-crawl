@@ -14,7 +14,7 @@ const config: PlaywrightTestConfig = {
   testDir: './.',
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
-
+  globalSetup: './globalSetup.ts',
   expect: {
     /**
      * Maximum time expect() should wait for the condition to be met.

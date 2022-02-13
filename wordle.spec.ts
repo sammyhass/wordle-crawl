@@ -1,5 +1,6 @@
 import { test } from '@playwright/test';
 import { WORDLE_URL } from './constants';
+import { uploadResult } from './lib/uploadResult';
 
 test('get wordle result', async ({ page }) => {
   await page.goto(WORDLE_URL);
@@ -20,5 +21,7 @@ test('get wordle result', async ({ page }) => {
   });
 
   await page.waitForTimeout(4000);
-  console.log(result);
+
+  // Create a new gh issue with the solution
+  await uploadResult(result);
 });
