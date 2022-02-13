@@ -1,4 +1,4 @@
-# wordle-crawl
+# wordler
 <3 to Josh Wardle for creating this absolutely gem of a game (and sorry)
 
 --------------
