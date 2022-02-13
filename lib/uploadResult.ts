@@ -1,5 +1,5 @@
 import { Octokit } from '@octokit/rest';
-import { GITHUB_TOKEN, REPO_NAME, REPO_OWNER, WORDLE_DAY } from '../constants';
+import { GITHUB_TOKEN, REPO_NAME, REPO_OWNER, WORDLE_DAY } from './constants';
 
 const octo = new Octokit({ auth: GITHUB_TOKEN });
 

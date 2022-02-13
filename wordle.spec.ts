@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { WORDLE_URL } from './constants';
+import { WORDLE_URL } from './lib/constants';
 import { uploadResult } from './lib/uploadResult';
 
 test('get wordle result', async ({ page }) => {
