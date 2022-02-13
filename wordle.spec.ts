@@ -5,8 +5,8 @@ import { uploadResult } from './lib/uploadResult';
 test('get wordle result', async ({ page }) => {
   await page.goto(WORDLE_URL);
 
-  await page.waitForLoadState('load');
   // Accept Cookies
+  await page.waitForSelector('#pz-gdpr-btn-accept');
   await page.click('#pz-gdpr-btn-accept');
 
   let sol;
