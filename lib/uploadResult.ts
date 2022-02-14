@@ -12,7 +12,7 @@ export const uploadResult = async (solution: string) => {
     owner: REPO_OWNER || '',
     repo: REPO_NAME || '',
     title: `Wordle Solution ${WORDLE_DAY} - ${date.toDateString()}`,
-    body: `## Wordle ${WORDLE_DAY}\n${wordleString}\n### \`solution: ${solution}\``,
+    body: `## Wordle ${date.toDateString()}\n${wordleString}\n### \`solution: ${solution}\``,
     labels: ['solution', 'wordle', date.toDateString()],
   });
 
